@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "dev": "npx nodemon --exec babel-node src/index.js",
-    "start": "node build/index.js"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
