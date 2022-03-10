@@ -1,7 +1,7 @@
-import {
+const {
   Schema,
   model
-} from 'mongoose';
+} = require('mongoose');
 
 const logSchema = new Schema({
   idUsuario: {
