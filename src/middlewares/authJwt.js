@@ -17,7 +17,7 @@ const verifyToken = async (req, res, next) => {
     }
 
     //verificar si es token valido
-    const decoded = jwt.verify(token, config.SECRET);
+    const decoded = jwt.verify(token, 'secret');
     req.usuarioId = decoded.id;
     const usuario = await Usuario.findById(req.usuarioId, {
       password: 0

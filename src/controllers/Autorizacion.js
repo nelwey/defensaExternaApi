@@ -4,6 +4,8 @@ const jwt = require('jsonwebtoken');
 const config = require('../config'); 
 
 ctrl.iniciarSesion = async (req, res) => {
+
+  
   try {
 
     //validando nombreUsuario
@@ -16,10 +18,8 @@ ctrl.iniciarSesion = async (req, res) => {
         msg: 'Nombre de usuario no existe!'
       }));
     }
-
     //validando contraseña
     const matchPassword = await Usuario.comparePassword(req.body.password, usuarioEncontrado.password)
-
     if (!matchPassword) {
       throw Error(JSON.stringify({
         msg: 'Contraseña incorrecta!'
@@ -29,7 +29,7 @@ ctrl.iniciarSesion = async (req, res) => {
       const token = jwt.sign({
         id: usuarioEncontrado._id,
         rol: usuarioEncontrado.rol
-      }, config.SECRET, {
+      }, 'secret', {
         expiresIn: 86400
       })
       res.status(200).json({
