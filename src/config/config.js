@@ -6,7 +6,7 @@ const ENVIRONMENT = process.env.NODE_ENV || 'dev';
 
 var URLDB;
 if(ENVIRONMENT === 'dev'){
-  URLDB = 'mongodb+srv://nelwey:nelwey@cluster0-zzplm.mongodb.net/defensaexterna';
+  URLDB = 'mongodb://localhost/defensaexterna';
 }else{
   URLDB = process.env.MONGO_URI;
 }
