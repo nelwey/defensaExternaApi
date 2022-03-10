@@ -36,8 +36,6 @@ const mantenimientoSchema = new Schema({
   gastos: [GASTO]
 
 }, {
-  versionKey: false
-}, {
   timestamps: true
 });
 

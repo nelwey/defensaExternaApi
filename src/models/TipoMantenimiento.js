@@ -8,10 +8,7 @@ const tipoMantenimientoSchema = new Schema({
     type: String,
     unique: true
   },
-}, {
-  versionKey: false
-}, {
+},{
   timestamps: true
 });
-
 module.exports = model('TipoMantenimiento', tipoMantenimientoSchema);

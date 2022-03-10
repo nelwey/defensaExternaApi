@@ -24,6 +24,7 @@ app.use(require('./routes/tipomantenimiento.routes'));
 app.use(require('./routes/solicitud.routes'));
 app.use(require('./routes/mantenimiento.routes'));
 app.use(require('./routes/reporte.routes'));
+app.use(require('./routes/log.routes'));
 
 
 module.exports = app;

@@ -23,11 +23,8 @@ const uEducativaSchema = new Schema({
     type: String,
   }
 
-}, {
-  versionKey: false
-}, {
+},{
   timestamps: true
 });
-
 
 module.exports = model('UEducativa', uEducativaSchema);

@@ -13,8 +13,6 @@ const UvSchema = new Schema({
     required: true
   }
 }, {
-  versionKey: false
-}, {
   timestamps: true
 });
 

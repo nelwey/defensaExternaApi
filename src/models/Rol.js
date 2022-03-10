@@ -8,8 +8,8 @@ const ROLES = ["admin", "usuario"];
 const rolSchema = new Schema({
   nombreRol: String
 
-}, {
-  versionKey: false
+},{
+  timestamps: true
 });
 
 module.exports = model('Rol', rolSchema);

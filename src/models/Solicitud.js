@@ -20,8 +20,7 @@ const solicitudSchema = new Schema({
     required: true,
   },
 
-}, {
-  versionKey: false
+},{
+  timestamps: true
 });
-
 module.exports =  model('Solicitud', solicitudSchema);

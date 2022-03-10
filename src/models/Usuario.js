@@ -18,8 +18,8 @@ const usuarioSchema = new Schema({
     ref: "Rol"
   }
 
-}, {
-  versionKey: false
+},{
+  timestamps: true
 });
 
 usuarioSchema.statics.encryptPassword = async (password) => {
