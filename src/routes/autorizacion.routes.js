@@ -1,12 +1,15 @@
-import {
+const {
   Router
-} from 'express';
+} = require('express');
 const router = Router();
 
 //ctrl methods
-import * as autorizacionCtrl from '../controllers/Autorizacion';
+const {
+  iniciarSesion,
+  cerrarSesion
+} = require('../controllers/Autorizacion');
 
-router.post('/api/autorizacion/iniciarsesion', autorizacionCtrl.iniciarSesion);
-router.get('/api/autorizacion/cerrarsesion', autorizacionCtrl.cerrarSesion);
+router.post('/api/autorizacion/iniciarsesion', iniciarSesion);
+router.get('/api/autorizacion/cerrarsesion', cerrarSesion);
 
 module.exports = router;

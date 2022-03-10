@@ -1,7 +1,7 @@
-import {
+const {
   Schema,
   model
-} from 'mongoose';
+} = require('mongoose');
 
 const UvSchema = new Schema({
   nombre: {
@@ -18,4 +18,4 @@ const UvSchema = new Schema({
   timestamps: true
 });
 
-export default model('Uv', UvSchema);
+module.exports = model('Uv', UvSchema);

@@ -1,8 +1,7 @@
-import {
+const {
   Schema,
   model
-} from 'mongoose';
-
+} = require('mongoose');
 const uEducativaSchema = new Schema({
   idUv: {
     type: Schema.Types.ObjectId,
@@ -31,4 +30,4 @@ const uEducativaSchema = new Schema({
 });
 
 
-export default model('UEducativa', uEducativaSchema);
+module.exports = model('UEducativa', uEducativaSchema);

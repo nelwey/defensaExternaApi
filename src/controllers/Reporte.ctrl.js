@@ -1,9 +1,5 @@
 const ctrl = {};
-import Mantenimiento from '../models/Mantenimiento';
-import Solicitud from '../models/Solicitud';
-import Uv from '../models/Uv';
-import UEducativa from '../models/UEducativa';
-
+const Mantenimiento = require('../models/Mantenimiento');
 
 ctrl.obtenerMantenimientos = async (req, res) => {
   const {

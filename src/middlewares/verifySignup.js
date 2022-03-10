@@ -1,15 +1,15 @@
-import {
+const {
   ROLES
-} from '../models/Rol';
-import Usuario from '../models/Usuario';
+} = require('../models/Rol');
+const Usuario = require('../models/Usuario');
 
-export const checkDuplicateUsername = async (req, res, next) => {
+const checkDuplicateUsername = async (req, res, next) => {
 
-  if(!req.body.nombreUsuario){
+  if (!req.body.nombreUsuario) {
     return res.status(400).json({
       ok: false,
       msg: "Nombre de Usuario es requerido!"
-    }) 
+    })
   }
 
   const usuario = await Usuario.findOne({
@@ -24,17 +24,17 @@ export const checkDuplicateUsername = async (req, res, next) => {
   next();
 }
 
-export const checkPasswordExist = async (req, res, next) => {
-  if(!req.body.password){
+const checkPasswordExist = async (req, res, next) => {
+  if (!req.body.password) {
     return res.status(400).json({
       ok: false,
       msg: "Contraseña es requerido!"
-    }) 
+    })
   }
   next();
 }
 
-export const checkRolesExisted = (req, res, next) => {
+const checkRolesExisted = (req, res, next) => {
   const rol = req.body.rol;
   if (!ROLES.includes(rol)) {
     return res.status(400).json({
@@ -45,7 +45,7 @@ export const checkRolesExisted = (req, res, next) => {
   next();
 }
 
-export const checkRolesRequired = (req, res, next) => {
+const checkRolesRequired = (req, res, next) => {
   const rol = req.body.rol;
   if (!rol) {
     return res.status(400).json({
@@ -54,4 +54,11 @@ export const checkRolesRequired = (req, res, next) => {
     })
   }
   next();
+}
+
+module.exports = {
+  checkDuplicateUsername,
+  checkPasswordExist,
+  checkRolesExisted,
+  checkRolesRequired,
 }

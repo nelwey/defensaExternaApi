@@ -1,16 +1,17 @@
-import {
-  authJwt
-} from '../middlewares'
-import {
+const authJwt = require('../middlewares/authJwt');
+const {
   Router
-} from 'express';
+} = require('express');
 const router = Router();
 
 
 //ctrl methods
-import * as reporteCtrl from '../controllers/Reporte.ctrl';
+const {
+  obtenerMantenimientos,
+  obtenerPorTipo
+} = require('../controllers/Reporte.ctrl');
 
-router.post('/api/reporte/mantenimiento', [authJwt.verifyToken, authJwt.isUsuario], reporteCtrl.obtenerMantenimientos);
-router.post('/api/reporte/mantenimientoByTipo', reporteCtrl.obtenerPorTipo);
+router.post('/api/reporte/mantenimiento', [authJwt.verifyToken, authJwt.isUsuario], obtenerMantenimientos);
+router.post('/api/reporte/mantenimientoByTipo', obtenerPorTipo);
 
 module.exports = router;

@@ -1,13 +1,13 @@
-import express from 'express';
-import morgan from 'morgan';
-import cors from 'cors';
+const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
 
-import {crearRoles} from './libs/initialSetup';
+const libs = require('./libs/initialSetup');
 
 const app = express();
 
 //creando roles por defecto
-crearRoles();
+// libs.crearRoles();
 
 //Middlewares
 app.use(morgan('dev'));
@@ -26,4 +26,4 @@ app.use(require('./routes/mantenimiento.routes'));
 app.use(require('./routes/reporte.routes'));
 
 
-export default app;
+module.exports = app;

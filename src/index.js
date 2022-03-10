@@ -1,6 +1,6 @@
 //ARRANCA LA APP
-import app from './app';
-import './database';
+const app = require('./app');
+require('./database');
 const env = require('./config/config');
 
 app.listen(env.PORT);

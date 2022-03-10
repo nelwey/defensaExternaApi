@@ -1,6 +1,6 @@
 const ctrl = {};
-import Usuario from '../models/Usuario';
-import Rol from '../models/Rol';
+const Usuario = require('../models/Usuario'); 
+const Rol = require('../models/Rol'); 
 
 ctrl.crear = async (req, res) => {
   try {

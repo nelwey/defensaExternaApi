@@ -1,9 +1,9 @@
-import jwt from 'jsonwebtoken';
-import config from '../config';
-import Usuario from '../models/Usuario';
-import Rol from '../models/Rol';
+const jwt = require('jsonwebtoken');
+const config = require('../config');
+const Usuario = require('../models/Usuario');
+const Rol = require('../models/Rol');
 
-export const verifyToken = async (req, res, next) => {
+const verifyToken = async (req, res, next) => {
 
   try {
 
@@ -32,8 +32,7 @@ export const verifyToken = async (req, res, next) => {
     })
   }
 }
-
-export const isUsuario = async (req, res, next) => {
+const isUsuario = async (req, res, next) => {
   try {
 
     //traer roles de usuario
@@ -59,7 +58,7 @@ export const isUsuario = async (req, res, next) => {
 
   }
 }
-export const isAdmin = async (req, res, next) => {
+const isAdmin = async (req, res, next) => {
   try {
 
     //traer roles de usuario
@@ -84,4 +83,10 @@ export const isAdmin = async (req, res, next) => {
     });
 
   }
+}
+
+module.exports = {
+  verifyToken,
+  isUsuario,
+  isAdmin,
 }

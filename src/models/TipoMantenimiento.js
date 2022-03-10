@@ -1,7 +1,7 @@
-import {
+const {
   Schema,
   model
-} from 'mongoose';
+} = require('mongoose');
 
 const tipoMantenimientoSchema = new Schema({
   nombre: {
@@ -14,4 +14,4 @@ const tipoMantenimientoSchema = new Schema({
   timestamps: true
 });
 
-export default model('TipoMantenimiento', tipoMantenimientoSchema);
+module.exports = model('TipoMantenimiento', tipoMantenimientoSchema);

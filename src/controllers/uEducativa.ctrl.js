@@ -1,5 +1,5 @@
 const ctrl = {};
-import UEducativa from '../models/UEducativa';
+const UEducativa =  require('../models/UEducativa'); 
 
 ctrl.crear = async (req, res) => {
   try {

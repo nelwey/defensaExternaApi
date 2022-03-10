@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const env = require('./config/config');
 
 mongoose.connect(env.URLDB, {

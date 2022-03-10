@@ -1,7 +1,7 @@
-import {
+const {
   Schema,
   model
-} from 'mongoose';
+} = require('mongoose');
 let GASTO = {
   detalle: {
     type: String,
@@ -42,4 +42,4 @@ const mantenimientoSchema = new Schema({
 });
 
 
-export default model('Mantenimiento', mantenimientoSchema);
+module.exports = model('Mantenimiento', mantenimientoSchema);

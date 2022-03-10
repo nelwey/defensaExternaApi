@@ -1,7 +1,7 @@
-import {
+const {
   Schema,
   model
-} from 'mongoose';
+} = require('mongoose');
 const solicitudSchema = new Schema({
   idUEducativa: {
     type: Schema.Types.ObjectId,
@@ -24,4 +24,4 @@ const solicitudSchema = new Schema({
   versionKey: false
 });
 
-export default model('Solicitud', solicitudSchema);
+module.exports =  model('Solicitud', solicitudSchema);

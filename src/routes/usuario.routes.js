@@ -1,20 +1,24 @@
-import {
-  authJwt,
-  verifySignup
-} from '../middlewares'
-import {
+const authJwt = require('../middlewares/authJwt');
+const verifySignup = require('../middlewares/verifySignup');
+const {
   Router
-} from 'express';
+} = require('express');
 const router = Router();
 
 
 //ctrl methods
-import * as usuarioCtrl from '../controllers/Usuario.ctrl';
+const {
+  crear,
+  obtener,
+  obtenerPorId,
+  actualizar,
+  eliminar
+} = require('../controllers/Usuario.ctrl');
 
-router.post('/api/usuarios', [authJwt.verifyToken, authJwt.isAdmin, verifySignup.checkDuplicateUsername, verifySignup.checkPasswordExist, verifySignup.checkRolesRequired, verifySignup.checkRolesExisted], usuarioCtrl.crear);
-router.get('/api/usuarios', [authJwt.verifyToken, authJwt.isAdmin], usuarioCtrl.obtener);
-router.get('/api/usuarios/:id', [authJwt.verifyToken, authJwt.isAdmin], usuarioCtrl.obtenerPorId);
-router.put('/api/usuarios/:id', [authJwt.verifyToken, authJwt.isAdmin, verifySignup.checkRolesExisted], usuarioCtrl.actualizar);
-router.delete('/api/usuarios/:id', [authJwt.verifyToken, authJwt.isAdmin], usuarioCtrl.eliminar);
+router.post('/api/usuarios', [authJwt.verifyToken, authJwt.isAdmin, verifySignup.checkDuplicateUsername, verifySignup.checkPasswordExist, verifySignup.checkRolesRequired, verifySignup.checkRolesExisted], crear);
+router.get('/api/usuarios', [authJwt.verifyToken, authJwt.isAdmin], obtener);
+router.get('/api/usuarios/:id', [authJwt.verifyToken, authJwt.isAdmin], obtenerPorId);
+router.put('/api/usuarios/:id', [authJwt.verifyToken, authJwt.isAdmin, verifySignup.checkRolesExisted], actualizar);
+router.delete('/api/usuarios/:id', [authJwt.verifyToken, authJwt.isAdmin], eliminar);
 
 module.exports = router;

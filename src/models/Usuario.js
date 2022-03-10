@@ -1,8 +1,8 @@
-import {
+const {
   Schema,
   model
-} from 'mongoose';
-import bcrypt from 'bcryptjs';
+} = require('mongoose');
+const bcrypt = require('bcryptjs'); 
 
 const usuarioSchema = new Schema({
   nombreUsuario: {
@@ -32,4 +32,4 @@ usuarioSchema.statics.comparePassword = async (password, receivedPassword) => {
 
 }
 
-export default model('Usuario', usuarioSchema);
+module.exports = model('Usuario', usuarioSchema);

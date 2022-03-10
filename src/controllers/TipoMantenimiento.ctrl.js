@@ -1,5 +1,5 @@
 const ctrl = {};
-import TipoMantenimiento from '../models/TipoMantenimiento';
+const TipoMantenimiento = require('../models/TipoMantenimiento'); 
 
 ctrl.crear = async (req, res) => {
   try {

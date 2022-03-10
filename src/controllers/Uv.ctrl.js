@@ -1,5 +1,5 @@
 const ctrl = {};
-import Uv from '../models/Uv';
+const Uv = require( '../models/Uv');
 
 ctrl.crear = async (req, res) => {
   try {

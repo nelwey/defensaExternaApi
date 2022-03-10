@@ -1,7 +1,7 @@
 const ctrl = {};
-import Usuario from '../models/Usuario';
-import jwt from 'jsonwebtoken';
-import config from '../config';
+const Usuario = require('../models/Usuario'); 
+const jwt = require('jsonwebtoken'); 
+const config = require('../config'); 
 
 ctrl.iniciarSesion = async (req, res) => {
   try {

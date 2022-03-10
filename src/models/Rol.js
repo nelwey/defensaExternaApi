@@ -1,9 +1,9 @@
-import {
+const {
   Schema,
   model
-} from 'mongoose';
+} = require('mongoose'); 
 
-export const ROLES = ["admin", "usuario"];
+const ROLES = ["admin", "usuario"];
 
 const rolSchema = new Schema({
   nombreRol: String
@@ -12,4 +12,4 @@ const rolSchema = new Schema({
   versionKey: false
 });
 
-export default model('Rol', rolSchema);
+module.exports = model('Rol', rolSchema);

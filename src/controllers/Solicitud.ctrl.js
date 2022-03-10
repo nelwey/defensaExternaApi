@@ -1,5 +1,5 @@
 const ctrl = {};
-import Solicitud from '../models/Solicitud';
+const Solicitud = require('../models/Solicitud'); 
 
 ctrl.crear = async (req, res) => {
   try {
