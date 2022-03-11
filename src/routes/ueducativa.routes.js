@@ -13,7 +13,7 @@ const {
   eliminar
 } = require('../controllers/uEducativa.ctrl');
 
-router.post('/api/ueducativa', [authJwt.verifyToken, authJwt.isUsuario], crear);
+router.post('/api/ueducativa',  crear);
 router.get('/api/ueducativas', [authJwt.verifyToken, authJwt.isUsuario], obtener);
 router.post('/api/ueducativasByUV', [authJwt.verifyToken, authJwt.isUsuario], obtenerPorUV);
 router.get('/api/ueducativa/:id', [authJwt.verifyToken, authJwt.isUsuario], obtenerPorId);

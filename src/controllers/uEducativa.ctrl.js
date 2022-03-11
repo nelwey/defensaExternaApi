@@ -1,16 +1,18 @@
 const ctrl = {};
-const UEducativa =  require('../models/UEducativa'); 
+const UEducativa = require('../models/UEducativa');
 
 ctrl.crear = async (req, res) => {
   try {
 
     const {
       nombre,
+      idUv
     } = req.body;
 
     //verificar uEducativa duplicado
     const uEducativaDuplicado = await UEducativa.findOne({
-      nombre
+      nombre,
+      idUv: idUv
     });
     if (uEducativaDuplicado) {
       return res.status(400).json({
